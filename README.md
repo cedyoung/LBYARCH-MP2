@@ -32,7 +32,7 @@ The comparative findings demonstrate that the assembly implementation performs a
 # II. AND III. SCREENSHOTS OF PROGRAM OUTPUT (C & x86-64 CHECK)
 The screenshot below demonstrates the correctness check for both the C version (Column 2) and the x86-64 version (Column 3).
 
-![Program Output Screenshot](https://github.com/YourUsername/LBYARCH-MP2/blob/main/final_output.jpg?raw=true)
+![Program Output Screenshot](final_output.jpg)
 
 - Sanity Check: PASSED (See [SUCCESS] message).
 - First 10 Elements: ALL MATHCED (See table)
