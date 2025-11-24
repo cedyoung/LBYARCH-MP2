@@ -59,17 +59,21 @@ int main() {
         run_c_kernel(count, scalar_val, vec_X, vec_Y, res_C);
         daxpy_asm(count, scalar_val, vec_X, vec_Y, res_ASM);
 
+        printf("   [First 10 Elements Check]\n");
+        printf("   Index   C Kernel      ASM Kernel    Match?\n");
+        printf("   ------------------------------------------\n");
+        
         int is_valid = 1;
-        int err_count = 0;
         for (long long k = 0; k < 10; k++) {
-            if (fabs(res_C[k] - res_ASM[k]) > 1e-9) {
-                is_valid = 0;
-                err_count++;
-                printf("   Mismatch at index %lld: C=%.5f vs ASM=%.5f\n", k, res_C[k], res_ASM[k]);
-            }
+            int match = (fabs(res_C[k] - res_ASM[k]) < 1e-9);
+            if (!match) is_valid = 0;
+            
+            printf("   [%lld]      %.4f        %.4f        %s\n", 
+                k, res_C[k], res_ASM[k], match ? "YES" : "NO");
         }
+        printf("   ------------------------------------------\n");
 
-        if (is_valid && err_count == 0) {
+        if (is_valid) {
             printf("   [SUCCESS] x86-64 Kernel output matches C version.\n");
         } else {
             printf("   [FAILURE] Output mismatch detected.\n");
