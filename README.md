@@ -15,6 +15,8 @@ The Assembly kernel's execution times for various vector sizes (2^10, 2^24, 2^29
 # PERFORMANCE RESULTS:
 
 # CORRECTNESS CHECK:
+- Sanity Check: PASSED
+- First 10 Elements: MATHCED
 
 # ANALYSIS:
 Scalar SIMD instructions (MOVSD, MULSD, and ADDSD) were used in a loop to implement the x86-64 assembly kernel, processing one element at a time. While allowing for manual register management (using RCX for the counter and XMM registers for floating-point arithmetic), this mimics the logic of the C kernel.
