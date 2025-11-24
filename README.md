@@ -41,7 +41,7 @@ The screenshot below demonstrates the correctness check for both the C version (
 
 # IV. VIDEO DEMONSTRATION:
 Video link:  
-
+https://youtu.be/3348tiMOcWE
 ******
 # Type instructions below into CMD in the folder to run
 ******
